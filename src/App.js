@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  React.useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Resonate Contact List</h1>
     </div>
   );
 }
