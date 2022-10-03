@@ -67,7 +67,7 @@ const DisplayTable = ({ data }) => {
                   <a href={"https://" + item.website}>{item.website}</a>
                 </td>
                 <td>
-                  {"Company: " +
+                  {/* {"Company: " +
                     item.company.name +
                     "\n" +
                     "Catch Prase: " +
@@ -75,7 +75,14 @@ const DisplayTable = ({ data }) => {
                     "\n" +
                     "Business: " +
                     item.company.bs +
-                    "."}
+                    "."} */}
+                  {
+                    <>
+                      <div class='myDIV'>{item.company.name}</div>
+                      <div class='hide'>{item.company.catchPhrase}</div>
+                      <div>Business : {" " + item.company.bs}</div>
+                    </>
+                  }
                 </td>
               </tr>
             );
