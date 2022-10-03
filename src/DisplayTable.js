@@ -3,6 +3,16 @@ import "./DisplayTable.css";
 import Map from "./Map";
 
 const DisplayTable = ({ data }) => {
+  // const address =
+  //   item.address.suite +
+  //   ", " +
+  //   item.address.street +
+  //   ", " +
+  //   item.address.city +
+  //   ", zip Code: " +
+  //   item.address.zipcode +
+  //   ".";
+  // console.log(address);
   return (
     <table>
       <tbody>
@@ -39,6 +49,16 @@ const DisplayTable = ({ data }) => {
                         lat: item.address.geo.lat,
                         lng: item.address.geo.lng,
                       }}
+                      name={
+                        item.address.suite +
+                        ", " +
+                        item.address.street +
+                        ", " +
+                        item.address.city +
+                        ", zip Code: " +
+                        item.address.zipcode +
+                        "."
+                      }
                     />
                   }
                 </td>

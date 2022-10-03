@@ -5,9 +5,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import { Icon } from "leaflet";
 
-const Map = ({ position }) => {
+const Map = ({ position, name }) => {
   const homeposition = [position.lat, position.lng];
-  console.log(position);
+  console.log(name);
   return (
     <MapContainer
       className='map'
@@ -29,9 +29,7 @@ const Map = ({ position }) => {
           })
         }
       >
-        <Popup>
-          Home: 8 WoodHill Street, <br /> Fairy Meadow, 2519
-        </Popup>
+        <Popup position={homeposition}>{name}</Popup>
       </Marker>
     </MapContainer>
   );

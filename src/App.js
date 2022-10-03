@@ -34,10 +34,11 @@ function App() {
       <h1>Resonate Contact List</h1>
       <form>
         <label>
-          Name:
+          Search:
           <input
             type='text'
             name='search'
+            placeholder='Name'
             onChange={(e) => {
               setSearch(e.target.value);
               setData((prevData) =>
