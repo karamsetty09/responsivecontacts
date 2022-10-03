@@ -52,7 +52,9 @@ const DisplayTable = ({ data }) => {
           );
         })
       ) : (
-        <h1>No Records found</h1>
+        <tr>
+          <h1>No Records found</h1>
+        </tr>
       )}
     </table>
   );

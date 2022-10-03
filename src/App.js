@@ -29,23 +29,27 @@ function App() {
         setLoading(false);
       });
   }, []);
-  const handleChange = (event) => {
-    setSearch(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    setData((prevData) => prevData.filter((item) => item.name === search));
-    event.preventDefault();
-  };
   return (
     <div className='App'>
       <h1>Resonate Contact List</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>
           Name:
-          <input type='text' name='search' onChange={handleChange} />
+          <input
+            type='text'
+            name='search'
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setData((prevData) =>
+                prevData.filter((item) =>
+                  search.toLowerCase() === ""
+                    ? item
+                    : item.name.toLowerCase().includes(search)
+                )
+              );
+            }}
+          />
         </label>
-        <input type='submit' value='Search' />
       </form>
       <br />
       {loading ? "Loading..." : <DisplayTable data={data} />}
