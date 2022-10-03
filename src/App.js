@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import DisplayTable from "./DisplayTable";
 
 function App() {
   const [data, setData] = useState([]);
@@ -44,9 +45,9 @@ function App() {
           Name:
           <input type='text' name='search' onChange={handleChange} />
         </label>
-        <input type='submit' value='Submit' />
+        <input type='submit' value='Search' />
       </form>
-      {data.map((item) => item.id)}
+      <DisplayTable data={data} />
     </div>
   );
 }

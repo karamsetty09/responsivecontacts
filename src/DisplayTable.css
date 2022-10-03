@@ -1,0 +1,12 @@
+table {
+  border: 2px solid forestgreen;
+}
+
+th {
+  border-bottom: 1px solid blue;
+}
+
+td {
+  text-align: left;
+  padding: 10px;
+}
