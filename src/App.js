@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 
@@ -6,6 +5,8 @@ function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+
   React.useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
@@ -27,9 +28,25 @@ function App() {
         setLoading(false);
       });
   }, []);
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    alert("A name was submitted: " + search);
+    event.preventDefault();
+  };
   return (
     <div className='App'>
       <h1>Resonate Contact List</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type='text' name='search' onChange={handleChange} />
+        </label>
+        <input type='submit' value='Submit' />
+      </form>
+      {data.map((item) => item.id)}
     </div>
   );
 }
