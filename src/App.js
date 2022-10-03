@@ -48,7 +48,8 @@ function App() {
         <input type='submit' value='Search' />
       </form>
       <br />
-      <DisplayTable data={data} />
+      {loading ? "Loading..." : <DisplayTable data={data} />}
+      {error ? error : null}
     </div>
   );
 }
