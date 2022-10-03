@@ -7,16 +7,6 @@ import { Icon } from "leaflet";
 
 const Map = ({ position, name }) => {
   const homeposition = [position.lat, position.lng];
-  const MyMarker = (props) => {
-    const initMarker = (ref) => {
-      if (ref) {
-        ref.leafletElement.openPopup();
-      }
-    };
-
-    return <Marker ref={initMarker} {...props} />;
-  };
-  console.log(name);
   return (
     <MapContainer
       className='map'

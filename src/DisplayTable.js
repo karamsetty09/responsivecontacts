@@ -3,16 +3,6 @@ import "./DisplayTable.css";
 import Map from "./Map";
 
 const DisplayTable = ({ data }) => {
-  // const address =
-  //   item.address.suite +
-  //   ", " +
-  //   item.address.street +
-  //   ", " +
-  //   item.address.city +
-  //   ", zip Code: " +
-  //   item.address.zipcode +
-  //   ".";
-  // console.log(address);
   return (
     <table>
       <tbody>
@@ -27,9 +17,9 @@ const DisplayTable = ({ data }) => {
           <th>Company</th>
         </tr>
         {data.length > 0 ? (
-          data.map((item, key) => {
+          data.map((item) => {
             return (
-              <tr key={key}>
+              <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.username}</td>
@@ -67,19 +57,10 @@ const DisplayTable = ({ data }) => {
                   <a href={"https://" + item.website}>{item.website}</a>
                 </td>
                 <td>
-                  {/* {"Company: " +
-                    item.company.name +
-                    "\n" +
-                    "Catch Prase: " +
-                    item.company.catchPhrase +
-                    "\n" +
-                    "Business: " +
-                    item.company.bs +
-                    "."} */}
                   {
                     <>
-                      <div class='myDIV'>{item.company.name}</div>
-                      <div class='hide'>{item.company.catchPhrase}</div>
+                      <div className='myDIV'>{item.company.name}</div>
+                      <div className='hide'>{item.company.catchPhrase}</div>
                       <div>Business : {" " + item.company.bs}</div>
                     </>
                   }
