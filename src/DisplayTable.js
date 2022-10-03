@@ -69,9 +69,7 @@ const DisplayTable = ({ data }) => {
             );
           })
         ) : (
-          <tr key='no-records'>
-            <h1>No Records found</h1>
-          </tr>
+          <tr key='no-records'>{<h1>No Records found</h1>}</tr>
         )}
       </tbody>
     </table>

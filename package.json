@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!react-leaflet)/\"",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!react-leaflet)/\" --transformIgnorePatterns \"node_modules/(?!leaflet)/\"",
     "eject": "react-scripts eject",
     "watch": "nodemon start"
   },
