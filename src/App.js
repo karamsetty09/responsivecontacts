@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    alert("A name was submitted: " + search);
+    setData((prevData) => prevData.filter((item) => item.name === search));
     event.preventDefault();
   };
   return (
@@ -47,6 +47,7 @@ function App() {
         </label>
         <input type='submit' value='Search' />
       </form>
+      <br />
       <DisplayTable data={data} />
     </div>
   );
